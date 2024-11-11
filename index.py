@@ -17,11 +17,9 @@ def create_class():
 
 # Load data dari file JSON
 def load_data(filename):
-    try:
-        with open(filename, "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
+    
+    with open(filename, "r") as f:
+        return json.load(f)
 
 # Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
 def crack_eggs(subject_type):
@@ -91,12 +89,15 @@ def quiz(cracked_subjects):
         for i, option in enumerate(question_data["options"], 1):
             print(f"{i}. {option}")
         
-        answer = input("Pilih jawaban yang benar (masukkan nomor): ")
-        if question_data["options"][int(answer) - 1] == question_data["answer"]:
-            print("Jawaban kamu benar!")
-            score += 1
+        answer = int(input("Pilih jawaban yang benar (masukkan nomor): "))
+        if 0 < answer <= 3:
+            if question_data["options"][int(answer) - 1] == question_data["answer"]:
+                print("Jawaban kamu benar!")
+                score += 1
+            else:
+                print(f"Jawaban salah. Jawaban yang benar adalah: {question_data['answer']}")
         else:
-            print(f"Jawaban salah. Jawaban yang benar adalah: {question_data['answer']}")
+            print("Kamu memasukkan jawaban yang tidak ada di pilihan, kamu tidak mendapatkan skor.")
 
     print(f"\nSkor kamu: {score}/{len(cracked_subjects)}")
 
