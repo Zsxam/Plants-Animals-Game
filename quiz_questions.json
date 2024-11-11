@@ -34,5 +34,29 @@
             "options": ["Di pohon", "Di tanah", "Di air"],
             "answer": "Di pohon"
         }
+    ],
+    "Beruang": [
+        {
+            "question": "Di mana beruang biasanya tinggal?",
+            "options": ["Di hutan", "Di padang rumput", "Di pegunungan"],
+            "answer": "Di hutan"
+        },
+        {
+            "question": "Beruang termasuk dalam kelompok hewan apa?",
+            "options": ["Mamalia", "Reptil", "Amfibi"],
+            "answer": "Mamalia"
+        }
+    ],
+    "Sapi": [
+        {
+            "question": "Apa makanan utama sapi?",
+            "options": ["Rumput", "Biji-bijian", "Daging"],
+            "answer": "Rumput"
+        },
+        {
+            "question": "Sapi termasuk dalam kelompok hewan apa?",
+            "options": ["Mamalia", "Reptil", "Amfibi"],
+            "answer": "Mamalia"
+        }
     ]
 }

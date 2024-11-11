@@ -7,6 +7,8 @@
     "Animals": [
         {"name": "Ayam", "info": "Hewan peliharaan yang sering ditemukan di peternakan."},
         {"name": "Kucing", "info": "Hewan peliharaan yang lucu dan suka bermain."},
-        {"name": "Burung", "info": "Hewan dengan kemampuan terbang."}
+        {"name": "Burung", "info": "Hewan dengan kemampuan terbang."},
+        {"name": "Beruang", "info": "Hewan mamalia yang hidup di hutan."},
+        {"name": "Sapi", "info": "Hewan mamalia pemakan rumput."}
     ]
 }
