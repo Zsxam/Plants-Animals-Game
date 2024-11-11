@@ -34,5 +34,125 @@
             "options": ["Di pohon", "Di tanah", "Di air"],
             "answer": "Di pohon"
         }
+    ],
+    "Mawar": [
+        {
+            "question": "Apa yang terdapat pada batang bunga mawar?",
+            "options": ["Duri", "Daun", "Bunga kecil"],
+            "answer": "Duri"
+        },
+        {
+            "question": "Apa saja warna yang dimiliki oleh bunga mawar?",
+            "options": ["Merah, Kuning, Putih", "Hitam, Abu-abu", "Hijau, Biru, Ungu"],
+            "answer": "Merah, Kuning, Putih"
+        }
+    ],
+    "Pohon Kelapa": [
+        {
+            "question": "Di mana pohon kelapa biasanya tumbuh?",
+            "options": ["Pantai", "Pegunungan", "Gurun"],
+            "answer": "Pantai"
+        },
+        {
+            "question": "Pohon kelapa biasanya tumbuh di daerah?",
+            "options": ["Rumah", "Pantai", "Masjid"],
+            "answer": "Pantai"
+        }
+    ],
+    "Anggrek": [
+        {
+            "question": "Apa jenis tumbuhan Anggrek?",
+            "options": ["Berbunga", "Tidak Berbunga", "Beracun"],
+            "answer": "Berbunga"
+        },
+        {
+            "question": "Apakah Anggrek memiliki banyak jenis?",
+            "options": ["Ya", "Tidak", "Tergantung Musim"],
+            "answer": "Ya"
+        }
+    ],
+    "Bunga Matahari": [
+        {
+            "question": "Apa warna kelopak bunga matahari?",
+            "options": ["Kuning", "Merah", "Biru"],
+            "answer": "Kuning"
+        },
+        {
+            "question": "Di bagian tengah bunga matahari berwarna?",
+            "options": ["Cokelat", "Hijau", "Putih"],
+            "answer": "Cokelat"
+        }
+    ],
+    "Kaktus": [
+        {
+            "question": "Di mana kaktus biasanya hidup?",
+            "options": ["Tempat kering", "Tempat basah", "Di bawah air"],
+            "answer": "Tempat kering"
+        },
+        {
+            "question": "Apa yang terdapat di sekujur tubuh kaktus?",
+            "options": ["Duri", "Daun besar", "Bunga merah"],
+            "answer": "Duri"
+        }
+    ],
+    "Lidah Buaya": [
+        {
+            "question": "Apa yang terdapat di dalam daun lidah buaya?",
+            "options": ["Air", "Biji", "Duri"],
+            "answer": "Air"
+        },
+        {
+            "question": "Bagaimana karakteristik daun lidah buaya?",
+            "options": ["Berdaging tebal", "Tipis", "Berkayu"],
+            "answer": "Berdaging tebal"
+        }
+    ],
+    "Bunga Melati": [
+        {
+            "question": "Berapa kelopak yang dimiliki oleh bunga melati?",
+            "options": ["5-9 kelopak", "2-4 kelopak", "10-15 kelopak"],
+            "answer": "5-9 kelopak"
+        },
+        {
+            "question": "Apa warna bunga melati?",
+            "options": ["Putih", "Merah", "Kuning"],
+            "answer": "Putih"
+        }
+    ],
+    "Bambu": [
+        {
+            "question": "Bagaimana karakteristik batang bambu?",
+            "options": ["Panjang dan kuat", "Pendek dan rapuh", "Tinggi dan tipis"],
+            "answer": "Panjang dan kuat"
+        },
+        {
+            "question": "Bagaimana pertumbuhan bambu?",
+            "options": ["Sangat cepat", "Lambat", "Berhenti di musim dingin"],
+            "answer": "Sangat cepat"
+        }
+    ],
+    "Pohon Mangga": [
+        {
+            "question": "Apa yang dihasilkan oleh pohon mangga?",
+            "options": ["Buah mangga", "Bunga mawar", "Biji kapas"],
+            "answer": "Buah mangga"
+        },
+        {
+            "question": "Berapa tinggi maksimal pohon mangga?",
+            "options": ["10 hingga 40 meter", "5 meter", "100 meter"],
+            "answer": "10 hingga 40 meter"
+        }
+    ],
+    "Teratai": [
+        {
+            "question": "Di mana teratai tumbuh?",
+            "options": ["Air dangkal", "Tanah kering", "Padang rumput"],
+            "answer": "Air dangkal"
+        },
+        {
+            "question": "Apa yang menjadi ciri khas teratai?",
+            "options": ["Bunga indah di permukaan air", "Batang kuat", "Buah berduri"],
+            "answer": "Bunga indah di permukaan air"
+        }
     ]
 }
