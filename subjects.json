@@ -1,8 +1,15 @@
 {
     "Plants": [
-        {"name": "Mawar", "info": "Bunga yang indah dan berwarna-warni."},
+        {"name": "Mawar", "info": "Bunga yang memiliki duri di batangnya."},
         {"name": "Pohon Kelapa", "info": "Pohon tinggi dengan buah kelapa."},
-        {"name": "Anggrek", "info": "Tumbuhan berbunga dengan banyak jenis."}
+        {"name": "Anggrek", "info": "Tumbuhan berbunga dengan banyak jenis."},
+        {"name": "Bunga Matahari", "info": "Bunga yang memiliki kelopak bunga yang besar berwarna kuning cerah dengan cokelat pada bagian tengahnya."},
+        {"name": "Kaktus", "info": "Tanaman yang hidup di tempat kering dan memiliki duri di sekujur tubuhnya."},
+        {"name": "Lidah Buaya", "info": "Tanaman yang memiliki daun berdaging tebal yang menyimpan banyak air."},
+        {"name": "Bunga Melati", "info": "Melati adalah bunga kecil berwarna putih dengan aroma yang harum."},
+        {"name": "Bambu", "info": "Memiliki batang panjang yang kuat dan tumbuh sangat cepat."},
+        {"name": "Pohon Mangga", "info": "Pohon ini menghasilkan buah mangga yang manis dan segar."},
+        {"name": "Teratai", "info": "Tanaman air yang dikenal dengan bunga indahnya yang tumbuh di permukaan air."}
     ],
     "Animals": [
         {"name": "Ayam", "info": "Hewan peliharaan yang sering ditemukan di peternakan."},
