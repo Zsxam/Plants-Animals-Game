@@ -9,6 +9,10 @@
         {"name": "Kucing", "info": "Merupakan hewan karnivora (pemakan daging)."},
         {"name": "Burung", "info": "Hewan yang memiliki kemampuan terbang dan tinggal di atas pohon."},
         {"name": "Beruang", "info": "Hewan mamalia yang hidup di hutan."},
-        {"name": "Sapi", "info": "Hewan mamalia pemakan rumput."}
+        {"name": "Kelinci", "info": "Hewan mamalia pemakan rumput."},
+        {"name": "Jerapah", "info": "Hewan mamalia dengan leher yang panjang."},
+        {"name": "Kura-kura", "info": "Reptil dengan cangkang yang keras."},
+        {"name": "Penguin", "info": "Burung yang tidak bisa terbang."},
+        {"name": "Ikan", "info": "Hewan yang bernapas dengan insang dan tubuhnya di tutupi oleh sisik."} 
     ]
 }

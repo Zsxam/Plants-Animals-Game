@@ -1,5 +1,5 @@
 {
-    "Ayam": [
+    "Ayam": [ 
         {
             "question": "Apa yang biasanya dimakan oleh ayam?",
             "options": ["Bijian", "Daging", "Ikan"],
@@ -10,7 +10,7 @@
             "options": ["Bertelur", "Beranak", "Membelah diri"],
             "answer": "Bertelur"
         }
-    ],
+    ], 
     "Kucing": [
         {
             "question": "Apa makanan utama kucing?",
@@ -58,5 +58,65 @@
             "options": ["Mamalia", "Reptil", "Amfibi"],
             "answer": "Mamalia"
         }
+    ],
+    "Kelinci": [
+    {
+        "question": "Apa makanan utama kelinci?",
+        "options": ["Rumput", "Daging", "Sayuran"],
+        "answer": "Rumput"
+    },
+    {
+        "question": "Kelinci termasuk dalam kelompok hewan apa?",
+        "options": ["Mamalia", "Reptil", "Amfibi"],
+        "answer": "Mamalia"
+    }
+    ],
+    "Jerapah": [
+    {
+        "question": "Apa ciri khas tubuh jerapah?",
+        "options": ["Leher panjang", "Sayap", "Kaki pendek"],
+        "answer": "Leher panjang"
+    },
+    {
+        "question": "Jerapah termasuk dalam kelompok hewan apa?",
+        "options": ["Mamalia", "Reptil", "Amfibi"],
+        "answer": "Mamalia"
+    }
+    ],
+    "Kura-kura": [
+    {
+        "question": "Apa yang membedakan kura-kura dari reptil lainnya?",
+        "options": ["Cangkang keras", "Sayap", "Leher panjang"],
+        "answer": "Cangkang keras"
+    },
+    {
+        "question": "Kura-kura termasuk dalam kelompok hewan apa?",
+        "options": ["Reptil", "Mamalia", "Amfibi"],
+        "answer": "Reptil"
+    }
+    ],
+    "Penguin": [
+    {
+        "question": "Apa yang membuat penguin unik?",
+        "options": ["Tidak bisa terbang", "Berenang dengan cepat", "Memiliki bulu berwarna cerah"],
+        "answer": "Tidak bisa terbang"
+    },
+    {
+        "question": "Penguin termasuk dalam kelompok hewan apa?",
+        "options": ["Burung", "Reptil", "Amfibi"],
+        "answer": "Burung"
+    }
+    ],
+    "Ikan": [
+    {
+        "question": "Apa organ yang digunakan ikan untuk bernapas?",
+        "options": ["Paru-paru", "Insang", "Hidung"],
+        "answer": "Insang"
+    },
+    {
+        "question": "Apa yang menutupi tubuh ikan?",
+        "options": ["Bulu", "Sisik", "Kulit berbulu"],
+        "answer": "Sisik"
+    }
     ]
 }
