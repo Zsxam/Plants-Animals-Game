@@ -1,0 +1,38 @@
+{
+    "Ayam": [
+        {
+            "question": "Apa yang biasanya dimakan oleh ayam?",
+            "options": ["Bijian", "Daging", "Ikan"],
+            "answer": "Bijian"
+        },
+        {
+            "question": "Ayam berkembang biak dengan cara?",
+            "options": ["Bertelur", "Beranak", "Membelah diri"],
+            "answer": "Bertelur"
+        }
+    ],
+    "Kucing": [
+        {
+            "question": "Apa makanan utama kucing?",
+            "options": ["Daging", "Rumput", "Serangga"],
+            "answer": "Daging"
+        },
+        {
+            "question": "Kucing termasuk hewan?",
+            "options": ["Herbivora", "Karnivora", "Omnivora"],
+            "answer": "Karnivora"
+        }
+    ],
+    "Burung": [
+        {
+            "question": "Apa yang membantu burung untuk terbang?",
+            "options": ["Sayap", "Kaki", "Sirip"],
+            "answer": "Sayap"
+        },
+        {
+            "question": "Di mana burung biasanya membuat sarang?",
+            "options": ["Di pohon", "Di tanah", "Di air"],
+            "answer": "Di pohon"
+        }
+    ]
+}
