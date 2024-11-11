@@ -14,6 +14,9 @@ def register_teacher():
 def login_teacher():
     pass
 
+def create_class():
+    pass
+
 # Load data dari file JSON
 def load_data(filename):
     try:
