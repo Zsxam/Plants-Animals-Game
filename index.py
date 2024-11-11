@@ -4,9 +4,9 @@ import random
 # File untuk menyimpan data guru dan kelas
 DATA_FILE = "data.json"
 # File yang berisi informasi hewan dan tumbuhan
-SUBJECTS_FILE = "subjects.json"
+SUBJECTS_FILE = "Plants-Animals-Game\subjects.json"
 # File yang berisi pertanyaan kuis
-QUIZ_FILE = "quiz_questions.json"
+QUIZ_FILE = "Plants-Animals-Game\quiz_questions.json"
 
 def register_teacher():
     pass
