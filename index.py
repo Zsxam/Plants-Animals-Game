@@ -1,8 +1,6 @@
 import json
 import random
 
-# File untuk menyimpan data guru dan kelas
-DATA_FILE = "data.json"
 # File yang berisi informasi hewan dan tumbuhan
 SUBJECTS_FILE = "subjects.json"
 # File yang berisi pertanyaan kuis
