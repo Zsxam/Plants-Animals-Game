@@ -5,9 +5,9 @@
         {"name": "Anggrek", "info": "Tumbuhan berbunga dengan banyak jenis."}
     ],
     "Animals": [
-        {"name": "Ayam", "info": "Hewan peliharaan yang sering ditemukan di peternakan."},
-        {"name": "Kucing", "info": "Hewan peliharaan yang lucu dan suka bermain."},
-        {"name": "Burung", "info": "Hewan dengan kemampuan terbang."},
+        {"name": "Ayam", "info": "Hewan pemakan biji-bijian yang berkembang biak dengan cara bertelur."},
+        {"name": "Kucing", "info": "Merupakan hewan karnivora (pemakan daging)."},
+        {"name": "Burung", "info": "Hewan yang memiliki kemampuan terbang dan tinggal di atas pohon."},
         {"name": "Beruang", "info": "Hewan mamalia yang hidup di hutan."},
         {"name": "Sapi", "info": "Hewan mamalia pemakan rumput."}
     ]
