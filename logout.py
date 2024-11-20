@@ -7,7 +7,6 @@ if pengguna_login:
         pengguna_login = False
         print("Logout berhasil!")
     elif pilih == "tidak":
-        pengguna_login = False
         print("Logout dibatalkan.")
     else:
         print("Tidak Valid. Silahkan pilih ya/tidak.")
