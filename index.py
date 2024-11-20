@@ -23,7 +23,7 @@ def login_teacher():
 
         if username == username_terdaftar and password == password_terdaftar:
             print("Login berhasil!")
-            return
+            return username
 
         elif username == username_terdaftar:
             print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
@@ -36,7 +36,8 @@ def login_teacher():
 
     print("Anda telah keluar dari sistem login")
 
-def create_class():
+def create_class(teacher_profile):
+    print(teacher_profile)
     pass
 
 # Load data dari file JSON
@@ -140,7 +141,12 @@ def main():
     if choice == "1":
         register_teacher()
     elif choice == "2":
-        login_teacher()
+        teacher_profile = login_teacher()
+        if teacher_profile:
+            print("1. Buat Kelas")
+            sub_choice = input("Pilih opsi (1): ")
+            if sub_choice == "1":
+                create_class(teacher_profile)
     elif choice == "3":
         self_mode()
     elif choice == "4":
