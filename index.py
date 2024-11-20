@@ -2,26 +2,49 @@ import json
 import random
 
 # File yang berisi informasi hewan dan tumbuhan
-SUBJECTS_FILE = "subjects.json"
+SUBJECTS_FILE = "Plants-Animals-Game\subjects.json"
 # File yang berisi pertanyaan kuis
-QUIZ_FILE = "quiz_questions.json"
+QUIZ_FILE = "Plants-Animals-Game\quiz_questions.json"
 
 def register_teacher():
     pass
 
 def login_teacher():
-    pass
 
-def create_class():
+    print("Silahkan Login")
+
+    username_terdaftar = "Daspro2024"
+    password_terdaftar = "Latihan"
+    kesempatan = 5
+
+    while kesempatan > 0:
+        username = input("Masukkan username: ")
+        password = input("Masukkan password: ")
+
+        if username == username_terdaftar and password == password_terdaftar:
+            print("Login berhasil!")
+            return username
+
+        elif username == username_terdaftar:
+            print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
+        elif password == password_terdaftar:
+            print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
+        else:
+            print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
+
+        kesempatan -= 1
+
+    print("Anda telah keluar dari sistem login")
+
+def create_class(teacher_profile):
+    print(teacher_profile)
     pass
 
 # Load data dari file JSON
 def load_data(filename):
-    try:
-        with open(filename, "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
+    
+    with open(filename, "r") as f:
+        return json.load(f)
 
 # Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
 def crack_eggs(subject_type):
@@ -91,12 +114,15 @@ def quiz(cracked_subjects):
         for i, option in enumerate(question_data["options"], 1):
             print(f"{i}. {option}")
         
-        answer = input("Pilih jawaban yang benar (masukkan nomor): ")
-        if question_data["options"][int(answer) - 1] == question_data["answer"]:
-            print("Jawaban kamu benar!")
-            score += 1
+        answer = int(input("Pilih jawaban yang benar (masukkan nomor): "))
+        if 0 < answer <= 3:
+            if question_data["options"][int(answer) - 1] == question_data["answer"]:
+                print("Jawaban kamu benar!")
+                score += 1
+            else:
+                print(f"Jawaban salah. Jawaban yang benar adalah: {question_data['answer']}")
         else:
-            print(f"Jawaban salah. Jawaban yang benar adalah: {question_data['answer']}")
+            print("Kamu memasukkan jawaban yang tidak ada di pilihan, kamu tidak mendapatkan skor.")
 
     print(f"\nSkor kamu: {score}/{len(cracked_subjects)}")
 
@@ -112,12 +138,12 @@ def main():
     if choice == "1":
         register_teacher()
     elif choice == "2":
-        teacher_email = login_teacher()
-        if teacher_email:
+        teacher_profile = login_teacher()
+        if teacher_profile:
             print("1. Buat Kelas")
             sub_choice = input("Pilih opsi (1): ")
             if sub_choice == "1":
-                create_class(teacher_email)
+                create_class(teacher_profile)
     elif choice == "3":
         self_mode()
     elif choice == "4":
@@ -125,5 +151,4 @@ def main():
     else:
         print("Pilihan tidak valid.")
 
-if __name__ == "__main__":
-    main()
+main()

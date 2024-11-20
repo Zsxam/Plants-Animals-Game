@@ -1,12 +1,25 @@
 {
     "Plants": [
-        {"name": "Mawar", "info": "Bunga yang indah dan berwarna-warni."},
-        {"name": "Pohon Kelapa", "info": "Pohon tinggi dengan buah kelapa."},
-        {"name": "Anggrek", "info": "Tumbuhan berbunga dengan banyak jenis."}
+        {"name": "Mawar", "info": "Bunga yang memiliki duri di batangnya. Mawar Memiliki berbagai warna, diantaranya merah, kuning, putih, orange dan bahkan biru."},
+        {"name": "Pohon Kelapa", "info": "Pohon tinggi dengan buah kelapa dan umumnya tumbuh di pantai atau daerah tropis."},
+        {"name": "Anggrek", "info": "Tumbuhan berbunga dengan banyak jenis. "},
+        {"name": "Bunga Matahari", "info": "Bunga yang memiliki kelopak bunga yang besar berwarna kuning cerah dengan cokelat pada bagian tengahnya."},
+        {"name": "Kaktus", "info": "Tanaman yang hidup di tempat kering dan memiliki duri di sekujur tubuhnya."},
+        {"name": "Lidah Buaya", "info": "Tanaman yang memiliki daun berdaging tebal yang menyimpan banyak air."},
+        {"name": "Bunga Melati", "info": "Melati adalah bunga kecil dengan 5-9 kelopak dan berwarna putih dengan aroma yang harum."},
+        {"name": "Bambu", "info": "Memiliki batang panjang yang kuat dan tumbuh sangat cepat."},
+        {"name": "Pohon Mangga", "info": "Pohon ini menghasilkan buah mangga yang manis dan segar. Pohon mangga dapat tumbuh cukup tinggi, mencapai 10 hingga 40 meter."},
+        {"name": "Teratai", "info": "Tanaman air yang dikenal dengan bunga indahnya yang tumbuh di permukaan air. Teratai tumbuh di air dangkal, seperti kolam, danau atau rawa."}
     ],
     "Animals": [
-        {"name": "Ayam", "info": "Hewan peliharaan yang sering ditemukan di peternakan."},
-        {"name": "Kucing", "info": "Hewan peliharaan yang lucu dan suka bermain."},
-        {"name": "Burung", "info": "Hewan dengan kemampuan terbang."}
+        {"name": "Ayam", "info": "Hewan pemakan biji-bijian yang berkembang biak dengan cara bertelur."},
+        {"name": "Kucing", "info": "Merupakan hewan karnivora (pemakan daging)."},
+        {"name": "Burung", "info": "Hewan yang memiliki kemampuan terbang dan tinggal di atas pohon."},
+        {"name": "Beruang", "info": "Hewan mamalia yang hidup di hutan."},
+        {"name": "Kelinci", "info": "Hewan mamalia pemakan rumput."},
+        {"name": "Jerapah", "info": "Hewan mamalia dengan leher yang panjang."},
+        {"name": "Kura-kura", "info": "Reptil dengan cangkang yang keras."},
+        {"name": "Penguin", "info": "Burung yang tidak bisa terbang."},
+        {"name": "Ikan", "info": "Hewan yang bernapas dengan insang dan tubuhnya di tutupi oleh sisik."} 
     ]
 }
