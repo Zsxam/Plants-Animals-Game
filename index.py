@@ -50,15 +50,17 @@ def load_data(filename):
 # Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
 def crack_eggs(subject_type):
     subjects_data = load_data(SUBJECTS_FILE)
-
+    
     if subject_type not in subjects_data:
         print(f"Subjek '{subject_type}' tidak ditemukan di data.")
         return
     
     selected_eggs = set()
     num_eggs = random.randint(3, 5)
-    print(f"Kamu harus memecahkan {num_eggs} telur dari 1 hingga 15 untuk melanjutkan ke kuis.")
     cracked_subjects = []
+    available_subjects = subjects_data[subject_type][:]  # Salin daftar subjek agar data asli tidak terpengaruh
+    
+    print(f"Kamu harus memecahkan {num_eggs} telur dari 1 hingga 15 untuk melanjutkan ke kuis.")
 
     while len(selected_eggs) < num_eggs:
         try:
@@ -70,16 +72,22 @@ def crack_eggs(subject_type):
                 print("Telur ini sudah dipilih sebelumnya!")
                 continue
 
+            if not available_subjects:
+                print("Tidak ada subjek tersisa untuk dipilih.")
+                break
+
+            # Pilih subjek secara acak dan hapus dari daftar
+            subject_info = random.choice(available_subjects)
+            available_subjects.remove(subject_info)
+
             selected_eggs.add(choice)
-            subject_info = random.choice(subjects_data[subject_type])
-            cracked_subjects.append(subject_info["name"])  # Tambahkan subjek yang dipecahkan
+            cracked_subjects.append(subject_info["name"])
             print(f"Telur {choice}: {subject_info['name']} - {subject_info['info']}")
         except ValueError:
             print("Masukkan nomor yang valid!")
 
     # Setelah memecahkan telur, siswa bisa mengikuti kuis
     quiz(cracked_subjects)
-
 
 # Fungsi Mode Mandiri
 def self_mode():
