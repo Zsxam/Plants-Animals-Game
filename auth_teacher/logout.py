@@ -1,10 +1,8 @@
-pengguna_login = True
-
-print("Menu Logout")
-if pengguna_login:
+def teacher_logout():
+    print("Menu Logout")
     pilih = input("Apakah anda ingin logout? (ya/tidak): ").lower()
     if pilih == "ya":
-        pengguna_login = False
+        teacher_profile = False
         print("Logout berhasil!")
     elif pilih == "tidak":
         print("Logout dibatalkan.")

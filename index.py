@@ -1,5 +1,6 @@
 import json
 import random
+import auth_teacher.logout as lo
 
 # File yang berisi informasi hewan dan tumbuhan
 SUBJECTS_FILE = "Plants-Animals-Game\subjects.json"
@@ -141,9 +142,12 @@ def main():
         teacher_profile = login_teacher()
         if teacher_profile:
             print("1. Buat Kelas")
-            sub_choice = input("Pilih opsi (1): ")
+            print("2. Logout")
+            sub_choice = input("Pilih opsi (1-2): ")
             if sub_choice == "1":
                 create_class(teacher_profile)
+            elif sub_choice == "2":
+                lo.teacher_logout()
     elif choice == "3":
         self_mode()
     elif choice == "4":
