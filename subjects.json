@@ -13,13 +13,13 @@
     ],
     "Animals": [
         {"name": "Ayam", "info": "Hewan pemakan biji-bijian yang berkembang biak dengan cara bertelur."},
-        {"name": "Kucing", "info": "Merupakan hewan karnivora (pemakan daging)."},
+        {"name": "Kucing", "info": "Merupakan hewan karnivora (pemakan daging) berkaki 4 yang bisa mengeong. "},
         {"name": "Burung", "info": "Hewan yang memiliki kemampuan terbang dan tinggal di atas pohon."},
-        {"name": "Beruang", "info": "Hewan mamalia yang hidup di hutan."},
-        {"name": "Kelinci", "info": "Hewan mamalia pemakan rumput."},
-        {"name": "Jerapah", "info": "Hewan mamalia dengan leher yang panjang."},
-        {"name": "Kura-kura", "info": "Reptil dengan cangkang yang keras."},
-        {"name": "Penguin", "info": "Burung yang tidak bisa terbang."},
+        {"name": "Beruang", "info": "Hewan mamalia yang memiliki sifat buas dan hidup di hutan "},
+        {"name": "Kelinci", "info": "Hewan mamalia pemakan rumput dan memiliki telinga yang panjang berjalannya melompat-lompat."},
+        {"name": "Jerapah", "info": "Hewan mamalia dengan leher yang panjang yang suka memakan daun pohon."},
+        {"name": "Kura-kura", "info": "Reptil dengan cangkang yang keras dan berjalan lambat yang bisa hidup di darat maupun di air."},
+        {"name": "Penguin", "info": "Burung yang tidak bisa terbang, yang hidup di wilayah dingin ."},
         {"name": "Ikan", "info": "Hewan yang bernapas dengan insang dan tubuhnya di tutupi oleh sisik."} 
     ]
 }
