@@ -137,12 +137,7 @@ def main():
     if choice == "1":
         register_teacher()
     elif choice == "2":
-        teacher_email = login_teacher()
-        if teacher_email:
-            print("1. Buat Kelas")
-            sub_choice = input("Pilih opsi (1): ")
-            if sub_choice == "1":
-                create_class(teacher_email)
+        login_teacher()
     elif choice == "3":
         self_mode()
     elif choice == "4":
@@ -150,5 +145,4 @@ def main():
     else:
         print("Pilihan tidak valid.")
 
-if __name__ == "__main__":
-    main()
+main()
