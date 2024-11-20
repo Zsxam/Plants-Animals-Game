@@ -26,11 +26,11 @@ def login_teacher():
             return
 
         elif username == username_terdaftar:
-            print(f"Password salah. Kesempatan tersisa: {kesempatan-1}")
+            print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
         elif password == password_terdaftar:
-            print(f"Username salah. Kesempatan tersisa: {kesempatan-1}")
+            print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
         else:
-            print(f"Username dan password salah. Kesempatan tersisa: {kesempatan-1}")
+            print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
 
         kesempatan -= 1
 
@@ -92,6 +92,9 @@ def self_mode():
     crack_eggs(subject_type)
 
 def class_mode():
+    pass
+
+def create_class():
     pass
 
 # Fungsi Kuis dengan pertanyaan berdasarkan isi telur yang dipecahkan
