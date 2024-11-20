@@ -95,9 +95,6 @@ def self_mode():
 def class_mode():
     pass
 
-def create_class():
-    pass
-
 # Fungsi Kuis dengan pertanyaan berdasarkan isi telur yang dipecahkan
 def quiz(cracked_subjects):
     quiz_data = load_data(QUIZ_FILE)
