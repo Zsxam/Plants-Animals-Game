@@ -7,20 +7,15 @@ DATA_FILE = "data.json"
 SUBJECTS_FILE = "Plants-Animals-Game\subjects.json"
 # File yang berisi pertanyaan kuis
 QUIZ_FILE = "Plants-Animals-Game\quiz_questions.json"
+# File yang berisi data guru
+Teacher_File = "Plants-Animals-Game\data_guru.json"
 
 def register_teacher():
     pass
 
-def load_data_guru(filename):
-    try:
-        with open(filename, 'r') as file:
-            return json.load(file)
-    except FileNotFoundError:
-        return []
-
 def login_teacher():
 
-    data_guru = load_data_guru("data_guru.json")
+    data_guru = load_data(Teacher_File)
     if len(data_guru) == 0:
         print("Data guru tidak tersedia.")
         return
@@ -28,22 +23,21 @@ def login_teacher():
     print("Silahkan Login")
     kesempatan = 5
 
-
     while kesempatan > 0:
         username = input("Masukkan Username: ")
         password = input("Masukkan Password: ")
 
         for guru in data_guru:
             if guru["Username"] == username and guru["Password"] == password:
-                print("Login berhasil!")
+                print("Login berhasil")
                 return
-
-        if data_guru == password:
-            print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
-        elif data_guru == username:
-            print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
-        else:
-            print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
+            elif guru["Username"] == username:
+                print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
+                break
+            elif guru["Password"] == password:
+                print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
+            else:
+                print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
 
         kesempatan -= 1
 
@@ -162,6 +156,9 @@ def main():
     else:
         print("Pilihan tidak valid.")
         return
+    
+SUBJECTS_FILE = "Plants-Animals-Game\\subjects.json"
+QUIZ_FILE = "Plants-Animals-Game\\quiz_questions.json"
 
 if __name__ == "__main__":
     main()
