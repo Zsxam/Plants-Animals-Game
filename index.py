@@ -30,17 +30,17 @@ def login_teacher():
 
 
     while kesempatan > 0:
-        username_input = input("Masukkan username: ")
-        password_input = input("Masukkan password: ")
+        username = input("Masukkan Username: ")
+        password = input("Masukkan Password: ")
 
         for guru in data_guru:
-            if guru["username"] == username_input and guru["password"] == password_input:
+            if guru["Username"] == username and guru["Password"] == password:
                 print("Login berhasil!")
                 return
 
-        if data_guru == password_input:
+        if data_guru == password:
             print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
-        elif data_guru == username_input:
+        elif data_guru == username:
             print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
         else:
             print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
@@ -161,5 +161,7 @@ def main():
         class_mode()
     else:
         print("Pilihan tidak valid.")
+        return
 
+if __name__ == "__main__":
     main()
