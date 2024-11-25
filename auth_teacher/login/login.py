@@ -1,25 +1,38 @@
+# File yang berisi data guru
+TEACHER_FILE = "auth_teacher\data_guru.json"
+
+def load_data(filename):
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
 def login_teacher():
 
-    print("Silahkan Login")
+    data_guru = load_data(Teacher_File)
+    if len(data_guru) == 0:
+        print("Data guru tidak tersedia.")
+        return
 
-    username_terdaftar = "Daspro2024"
-    password_terdaftar = "Latihan"
+    print("Silahkan Login")
     kesempatan = 5
 
     while kesempatan > 0:
-        username = input("Masukkan username: ")
-        password = input("Masukkan password: ")
+        username = input("Masukkan Username: ")
+        password = input("Masukkan Password: ")
 
-        if username == username_terdaftar and password == password_terdaftar:
-            print("Login berhasil!")
-            return username
-
-        elif username == username_terdaftar:
-            print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
-        elif password == password_terdaftar:
-            print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
-        else:
-            print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
+        for guru in data_guru:
+            if guru["Username"] == username and guru["Password"] == password:
+                print("Login berhasil")
+                return
+            elif guru["Username"] == username:
+                print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
+                break
+            elif guru["Password"] == password:
+                print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
+            else:
+                print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
 
         kesempatan -= 1
 

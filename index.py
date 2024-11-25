@@ -1,4 +1,3 @@
-
 import auth_teacher.logout.logout as lo
 import auth_teacher.login.login as login
 import auth_teacher.register.register as reg
@@ -32,6 +31,5 @@ def main():
         classes.class_mode()
     else:
         print("Pilihan tidak valid.")
-
 if __name__ == "__main__":
     main()
