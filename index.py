@@ -11,25 +11,36 @@ QUIZ_FILE = "Plants-Animals-Game\quiz_questions.json"
 def register_teacher():
     pass
 
+def load_data_guru(filename):
+    try:
+        with open(filename, 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
 def login_teacher():
 
-    print("Silahkan Login")
+    data_guru = load_data_guru("data_guru.json")
+    if len(data_guru) == 0:
+        print("Data guru tidak tersedia.")
+        return
 
-    username_terdaftar = "Daspro2024"
-    password_terdaftar = "Latihan"
+    print("Silahkan Login")
     kesempatan = 5
 
+
     while kesempatan > 0:
-        username = input("Masukkan username: ")
-        password = input("Masukkan password: ")
+        username_input = input("Masukkan username: ")
+        password_input = input("Masukkan password: ")
 
-        if username == username_terdaftar and password == password_terdaftar:
-            print("Login berhasil!")
-            return
+        for guru in data_guru:
+            if guru["username"] == username_input and guru["password"] == password_input:
+                print("Login berhasil!")
+                return
 
-        elif username == username_terdaftar:
+        if data_guru == password_input:
             print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
-        elif password == password_terdaftar:
+        elif data_guru == username_input:
             print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
         else:
             print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
