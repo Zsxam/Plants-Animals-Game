@@ -1,3 +1,4 @@
+import os
 import json
 # File yang berisi data guru
 TEACHER_FILE = "auth_teacher\data_guru.json"
@@ -15,7 +16,7 @@ def login_teacher():
     if len(data_guru) == 0:
         print("Data guru tidak tersedia.")
         return
-
+    os.system('cls')
     print("Silahkan Login")
     kesempatan = 5
 
@@ -25,15 +26,15 @@ def login_teacher():
 
         for guru in data_guru:
             if guru["Username"] == username and guru["Password"] == password:
-                print("Login berhasil")
-                return
+                os.system('cls')
+                print(f"Selamat datang, {username}!")
+                return username
             elif guru["Username"] == username:
-                print(f"Password salah, kesempatan tersisa: {kesempatan-1}")
-                break
+                print(f"\nPassword salah, kesempatan tersisa: {kesempatan-1}")
             elif guru["Password"] == password:
-                print(f"Username salah, kesempatan tersisa: {kesempatan-1}")
+                print(f"\nUsername salah, kesempatan tersisa: {kesempatan-1}")
             else:
-                print(f"Username dan password salah, kesempatan tersisa: {kesempatan-1}")
+                print(f"\nUsername dan password salah, kesempatan tersisa: {kesempatan-1}")
 
         kesempatan -= 1
 

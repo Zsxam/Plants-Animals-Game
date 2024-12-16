@@ -1,3 +1,4 @@
+import os
 import json
 import random
 
@@ -29,7 +30,7 @@ def crack_eggs(subject_type):
 
     while len(selected_eggs) < num_eggs:
         try:
-            choice = int(input("Pilih nomor telur (1-15): "))
+            choice = int(input("\nPilih nomor telur (1-15): "))
             if choice < 1 or choice > 15:
                 print("Nomor telur harus antara 1 hingga 15.")
                 continue
@@ -52,7 +53,14 @@ def crack_eggs(subject_type):
             print("Masukkan nomor yang valid!")
 
     # Setelah memecahkan telur, siswa bisa mengikuti kuis
-    quiz(cracked_subjects)
+    verif = "tidak"
+    while verif.lower() == "tidak":
+        verif = input("\nApakah anda ingin langsung melanjutkan ke quiz? (ya/tidak): ")
+        if verif.lower() == "ya":
+            os.system('cls')
+            quiz(cracked_subjects)
+        else: 
+            print("\nSilahkan baca-baca dahulu (scroll keatas)")
 
 # Fungsi Kuis dengan pertanyaan berdasarkan isi telur yang dipecahkan
 def quiz(cracked_subjects):
