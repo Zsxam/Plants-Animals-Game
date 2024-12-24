@@ -6,6 +6,20 @@
             "subject": "Animals",
             "class_code": "650495",
             "students_scores": {}
+        },
+        {
+            "teacher": "Daspro2024",
+            "class_name": "Plants 1",
+            "subject": "Plants",
+            "class_code": "47afa4",
+            "students_scores": {}
+        },
+        {
+            "teacher": "azka@gmail.com",
+            "class_name": "Kelas Azka",
+            "subject": "Plants",
+            "class_code": "4f7414",
+            "students_scores": {}
         }
     ]
 }
