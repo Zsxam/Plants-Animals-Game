@@ -21,21 +21,20 @@ def login_teacher():
     kesempatan = 5
 
     while kesempatan > 0:
-        email = input("Masukkan Email: ")
+        username = input("Masukkan Username: ")
         password = input("Masukkan Password: ")
 
         for guru in data_guru:
-            if guru["email"] == email and guru["password"] == password:
+            if guru["Username"] == username and guru["Password"] == password:
                 os.system('cls')
-                nama = next((guru['name'] for guru in data_guru if guru['email'] == email), None)
-                print(f"Selamat datang, {nama}!")
-                return email, nama
-            elif guru["email"] == email:
+                print(f"Selamat datang, {username}!")
+                return username
+            elif guru["Username"] == username:
                 print(f"\nPassword salah, kesempatan tersisa: {kesempatan-1}")
-            elif guru["password"] == password:
-                print(f"\nEmail salah, kesempatan tersisa: {kesempatan-1}")
+            elif guru["Password"] == password:
+                print(f"\nUsername salah, kesempatan tersisa: {kesempatan-1}")
             else:
-                print(f"\nEmail dan password salah, kesempatan tersisa: {kesempatan-1}")
+                print(f"\nUsername dan password salah, kesempatan tersisa: {kesempatan-1}")
 
         kesempatan -= 1
 
