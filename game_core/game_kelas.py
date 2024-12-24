@@ -1,7 +1,6 @@
 import os
 import json
 import random
-import index
 
 # File yang berisi informasi hewan dan tumbuhan
 SUBJECTS_FILE = "game_core\subjects.json"
@@ -93,4 +92,3 @@ def quiz(cracked_subjects):
             print("Kamu memasukkan jawaban yang tidak ada di pilihan, kamu tidak mendapatkan skor.")
 
     print(f"\nSkor kamu: {score}/{len(cracked_subjects)}")
-    index.main()
