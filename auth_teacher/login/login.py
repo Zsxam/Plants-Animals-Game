@@ -20,17 +20,16 @@ def login_teacher():
     kesempatan = 5
 
     while kesempatan > 0:
-        email = input("Masukkan Email: ")
+        email = input("\nMasukkan Email: ")
         password = input("Masukkan Password: ")
 
         for guru in data_guru:
             if guru["email"] == email and guru["password"] == password:
                 os.system('cls')
                 return email
-            else:
-                print(f"\nEmail atau password salah, kesempatan tersisa: {kesempatan-1}")
 
         kesempatan -= 1
+        print(f"\nEmail atau password salah, kesempatan tersisa: {kesempatan}")
 
     print("Anda telah keluar dari sistem login\n")
     return

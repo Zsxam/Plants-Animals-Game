@@ -132,7 +132,8 @@ def teacher_menu(teacher_profile):
         print("1. Tambah Kelas")
         print("2. Ubah Kelas")
         print("3. Hapus Kelas")
-        print("4. Logout")
+        print("4. Tampilkan Kelas")
+        print("5. Logout")
 
         choice = input("Pilih opsi (1-4): ")
         if choice == "1":
