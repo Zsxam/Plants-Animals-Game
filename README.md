@@ -12,35 +12,9 @@ Plants & Animals Game adalah aplikasi edukasi interaktif yang dirancang untuk me
 - **Pengelolaan Kelas**: Guru dapat menambah, mengedit, dan menghapus kelas yang mereka ajar.
 
 ## Struktur Proyek
-Plants-Animals-Game/
-│
-├── auth_teacher/
-│   ├── data_guru.json       # Data guru yang terdaftar
-│   ├── login/
-│   │   └── login.py         # Modul untuk login guru
-│   ├── logout/
-│   │   └── logout.py        # Modul untuk logout guru
-│   └── register/
-│       └── register.py      # Modul untuk registrasi guru
-│
-├── game_core/
-│   ├── game.py              # Modul utama untuk permainan
-│   ├── game_kelas.py        # Modul untuk permainan di mode kelas
-│   ├── quiz_questions.json   # Pertanyaan kuis
-│   └── subjects.json         # Data tentang tanaman dan hewan
-│
-├── mode/
-│   ├── class_mode/
-│   │   ├── class_mode.py     # Modul untuk mode kelas
-│   │   └── kelas.json        # Data kelas
-│   └── self_mode/
-│       └── self_mode.py      # Modul untuk mode mandiri
-│
-├── teacher_menu/
-│   └── menu.py               # Modul untuk menu guru
-│
-├── index.py                  # Modul utama untuk menjalankan aplikasi
-└── README.md                 # Dokumentasi proyek
+```
+Plants-Animals-Game/ │ ├── auth_teacher/ │ ├── data_guru.json # Data guru yang terdaftar │ ├── login/ │ │ └── login.py # Modul untuk login guru │ ├── logout/ │ │ └── logout.py # Modul untuk logout guru │ └── register/ │ └── register.py # Modul untuk registrasi guru │ ├── game_core/ │ ├── game.py # Modul utama untuk permainan │ ├── game_kelas.py # Modul untuk permainan di mode kelas │ ├── quiz_questions.json # Pertanyaan kuis │ └── subjects.json # Data tentang tanaman dan hewan │ ├── mode/ │ ├── class_mode/ │ │ ├── class_mode.py # Modul untuk mode kelas │ │ └── kelas.json # Data kelas │ └── self_mode/ │ └── self_mode.py # Modul untuk mode mandiri │ ├── teacher_menu/ │ └── menu.py # Modul untuk menu guru │ ├── index.py # Modul utama untuk menjalankan aplikasi └── README.md # Dokumentasi proyek
+```
 
 ## Cara Menjalankan Aplikasi
 1. **Clone Repository**:
