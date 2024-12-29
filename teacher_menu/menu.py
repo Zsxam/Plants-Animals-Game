@@ -121,7 +121,29 @@ def show_classes(teacher_profile):
         # Cocokkan teacher_profile dengan "teacher" di setiap kelas
         if kelas.get("teacher") == teacher_profile:
             print(f"- Nama Kelas: {kelas['class_name']}, Subjek: {kelas['subject']}, Kode: {kelas['class_code']}")
-    print(" ")
+    print("\nMenu Melihat Skor")
+    print("1. Melihat Skor")
+    print("2. Kembali")
+    lihat_skor = input("Pilih menu (1-2): ")
+    if lihat_skor == "1":
+        class_code = input("\nMasukkan kode kelas untuk melihat skor siswa: ")
+        # Cari kelas berdasarkan kode
+        for kelas in data_kelas.get("classes", []):
+            if kelas.get("class_code") == class_code and kelas.get("teacher") == teacher_profile:
+                print(f"\nSkor Siswa di Kelas '{kelas['class_name']}':")
+                if kelas.get("students_scores"):
+                    for student, score in kelas["students_scores"].items():
+                        print(f"- {student}: {score}")
+                    print("")
+                else:
+                    print("Belum ada skor siswa yang terdaftar.")
+                return
+
+        print("Kelas tidak ditemukan atau Anda tidak memiliki akses untuk melihat skor siswa di kelas ini.")
+    if lihat_skor == "2":
+        return
+    else: 
+        print("Masukkan nomor menu yang benar.")
 
 def teacher_menu(teacher_profile):
     data_guru = load_data(TEACHER_FILE)
@@ -135,7 +157,7 @@ def teacher_menu(teacher_profile):
         print("4. Tampilkan Kelas")
         print("5. Logout")
 
-        choice = input("Pilih opsi (1-4): ")
+        choice = input("Pilih opsi (1-5): ")
         if choice == "1":
             os.system('cls')
             create_class(teacher_profile)
