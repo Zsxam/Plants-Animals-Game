@@ -4,7 +4,7 @@ import os
 import game_core.game as game
 import index
 
-KELAS_FILE = "mode\class_mode\kelas.json"
+KELAS_FILE = "mode/class_mode/kelas.json"
 
 def load_data(filename):
     

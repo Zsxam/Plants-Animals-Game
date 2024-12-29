@@ -20,6 +20,13 @@
             "subject": "Plants",
             "class_code": "4f7414",
             "students_scores": {}
+        },
+        {
+            "teacher": "Haikal@gmail.com",
+            "class_name": "haha",
+            "subject": "Plants",
+            "class_code": "608f04",
+            "students_scores": {}
         }
     ]
 }

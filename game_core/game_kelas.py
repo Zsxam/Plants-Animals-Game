@@ -3,9 +3,9 @@ import json
 import random
 
 # File yang berisi informasi hewan dan tumbuhan
-SUBJECTS_FILE = "game_core\subjects.json"
+SUBJECTS_FILE = "game_core/subjects.json"
 # File yang berisi pertanyaan kuis
-QUIZ_FILE = "game_core\quiz_questions.json"
+QUIZ_FILE = "game_core/quiz_questions.json"
 
 # Load data dari file JSON
 def load_data(filename):

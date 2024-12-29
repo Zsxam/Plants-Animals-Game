@@ -5,8 +5,8 @@ import game_core.game as game
 import auth_teacher.logout.logout as lo
 import index
 
-KELAS_FILE = "mode\class_mode\kelas.json"
-TEACHER_FILE = "auth_teacher\data_guru.json"
+KELAS_FILE = "mode/class_mode/kelas.json"
+TEACHER_FILE = "auth_teacher/data_guru.json"
 
 def load_data(filename):
     
@@ -117,7 +117,7 @@ def teacher_menu(teacher_profile):
             os.system('cls')
             create_class(teacher_profile)
         elif choice == "2":
-            change_class(teacher_profile)
+            edit_class(teacher_profile)
         elif choice == "3":
             delete_class(teacher_profile)
         elif choice == "4":

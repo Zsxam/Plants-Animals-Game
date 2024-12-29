@@ -1,7 +1,7 @@
 import os
 import json
 # File yang berisi data guru
-TEACHER_FILE = "auth_teacher\data_guru.json"
+TEACHER_FILE = "auth_teacher/data_guru.json"
 
 def load_data(filename):
     try:
@@ -29,7 +29,7 @@ def login_teacher():
                 os.system('cls')
                 nama = next((guru['name'] for guru in data_guru if guru['email'] == email), None)
                 print(f"Selamat datang, {nama}!")
-                return email, nama
+                return email
             elif guru["email"] == email:
                 print(f"\nPassword salah, kesempatan tersisa: {kesempatan-1}")
             elif guru["password"] == password:

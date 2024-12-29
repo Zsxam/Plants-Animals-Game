@@ -1,7 +1,7 @@
 import json
 import index
 
-TEACHER_FILE = "auth_teacher\data_guru.json"
+TEACHER_FILE = "auth_teacher/data_guru.json"
 
 #Memuat data dari file dataguru.json
 def load_data():
@@ -30,7 +30,7 @@ def register_teacher():
 
 
     new_users = {
-        "nama": nama,
+        "name": nama,
         "email": email,
         "password": password 
     }

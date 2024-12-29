@@ -19,16 +19,16 @@ def main(name=""):
 
         choice = input("Pilih opsi (1-5): ")
         if choice == "1":
-            os.system('cls')
+            os.system('clear')
             reg.register_teacher()
         elif choice == "2":
             teacher_profile = login.login_teacher()
             menu.teacher_menu(teacher_profile)
         elif choice == "3":
-            os.system('cls')
+            os.system('clear')
             selfs.self_mode()
         elif choice == "4":
-            os.system('cls')
+            os.system('clear')
             classes.class_mode()
         elif choice == "5":
             print("Terimakasih Sudah Memainkan Game Plants & Animals! 😊")
