@@ -21,21 +21,21 @@ def register_teacher():
     email = input("Masukkan email: ")
     password = input("Masukkan password: ")
 
-    users = load_data() #Variabel users berisi data dari file dataguru.json
+    guru = load_data() #Variabel guru berisi data dari file dataguru.json
 
-#Untuk menghindari username yang sama
-    if email in users:
-        print("Email sudah terdaftar. Silahkan gunakan Email lain.")
-        return
+    #Untuk menghindari email yang sama
+    for existing_guru in guru:
+        if existing_guru["email"] == email:
+            print("Email sudah terdaftar. Silahkan gunakan Email lain.\n")
+            return
 
-
-    new_users = {
+    new_guru = {
         "name": nama,
         "email": email,
         "password": password 
     }
 
-    users.append(new_users)
-    save_database(users)
+    guru.append(new_guru)
+    save_database(guru)
     print("Registrasi berhasil!")
-    index.main()
+    return

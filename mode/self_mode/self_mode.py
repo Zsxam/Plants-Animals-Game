@@ -10,4 +10,5 @@ def self_mode():
         return
 
     # Mulai pemecahan telur setelah memilih subjek
+    print(f"Subjek yang anda pilih adalah {subject_type.capitalize()}\n")
     game.crack_eggs(subject_type)

@@ -22,10 +22,40 @@
             "students_scores": {}
         },
         {
-            "teacher": "Haikal@gmail.com",
-            "class_name": "haha",
+            "teacher": "zsxam@gmail.com",
+            "class_name": "Zsxam",
+            "subject": "Animals",
+            "class_code": "4ac2bf",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "Zsxam",
             "subject": "Plants",
-            "class_code": "608f04",
+            "class_code": "a3b0c9",
+            "students_scores": {
+                "Azka": 33.3
+            }
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "cihuy",
+            "subject": "Plants",
+            "class_code": "bfe468",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "v",
+            "subject": "animals",
+            "class_code": "73fc79",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "Kelas Azka",
+            "subject": "Animals",
+            "class_code": "c98b52",
             "students_scores": {}
         }
     ]

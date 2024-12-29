@@ -6,11 +6,10 @@ import mode.class_mode.class_mode as classes
 import mode.self_mode.self_mode as selfs
 import teacher_menu.menu as menu
 
-os.system('cls')
 # Main Program
-def main(name=""):
+def main():
     while True:
-        print(f"Selamat datang di Plants & Animals! [{name}]")
+        print(f"Selamat datang di Plants & Animals!")
         print("1. Registrasi Guru")
         print("2. Login Guru")
         print("3. Mode Mandiri")
@@ -23,7 +22,8 @@ def main(name=""):
             reg.register_teacher()
         elif choice == "2":
             teacher_profile = login.login_teacher()
-            menu.teacher_menu(teacher_profile)
+            if teacher_profile: 
+                menu.teacher_menu(teacher_profile)
         elif choice == "3":
             os.system('clear')
             selfs.self_mode()
@@ -32,7 +32,7 @@ def main(name=""):
             classes.class_mode()
         elif choice == "5":
             print("Terimakasih Sudah Memainkan Game Plants & Animals! 😊")
-            break
+            quit()
         else:
             print("Pilihan tidak valid.")
 

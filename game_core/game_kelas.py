@@ -6,6 +6,8 @@ import random
 SUBJECTS_FILE = "game_core/subjects.json"
 # File yang berisi pertanyaan kuis
 QUIZ_FILE = "game_core/quiz_questions.json"
+# File yang berisi kelas
+KELAS_FILE = "mode/class_mode/kelas.json"
 
 # Load data dari file JSON
 def load_data(filename):
@@ -13,8 +15,12 @@ def load_data(filename):
     with open(filename, "r") as f:
         return json.load(f)
 
+def save_data(data, filename):
+    with open(filename, "w") as f:
+        json.dump(data, f, indent=4)
+
 # Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
-def crack_eggs(subject_type):
+def crack_eggs(subject_type, name, class_code):
     subjects_data = load_data(SUBJECTS_FILE)
     
     if subject_type not in subjects_data:
@@ -22,11 +28,11 @@ def crack_eggs(subject_type):
         return
     
     selected_eggs = set()
-    num_eggs = random.randint(3, 5)
+    num_eggs = 5 
     cracked_subjects = []
     available_subjects = subjects_data[subject_type][:]  # Salin daftar subjek agar data asli tidak terpengaruh
     
-    print(f"Kamu harus memecahkan {num_eggs} telur dari 1 hingga 15 untuk melanjutkan ke kuis.")
+    print(f"Kamu harus memecahkan 3-5 telur dengan memilih angka dari 1 hingga 15 untuk melanjutkan ke kuis.")
 
     while len(selected_eggs) < num_eggs:
         try:
@@ -49,21 +55,31 @@ def crack_eggs(subject_type):
             selected_eggs.add(choice)
             cracked_subjects.append(subject_info["name"])
             print(f"Telur {choice}: {subject_info['name']} - {subject_info['info']}")
+
+            # Cek jumlah telur yang telah dipecahkan
+            if len(selected_eggs) == 3:
+                verif = input("\nAnda sudah memecahkan 3 cracks, apakah anda ingin melanjutkan ke quiz? (ya/tidak): ")
+                if verif.lower() == "ya":
+                    break
+                else:
+                    print("Anda bisa memecahkan 2 kali lagi.")
+            elif len(selected_eggs) == 4:
+                verif = input("\nAnda sudah memecahkan 4 cracks, apakah anda ingin melanjutkan ke quiz? (ya/tidak): ")
+                if verif.lower() == "ya":
+                    break
+                else:
+                    print("Anda bisa memecahkan 1 kali lagi.")
+            elif len(selected_eggs) == 5:
+                print("Anda telah memecahkan 5 telur. Melanjutkan ke kuis.")
+                break
+
         except ValueError:
             print("Masukkan nomor yang valid!")
 
-    # Setelah memecahkan telur, siswa bisa mengikuti kuis
-    verif = "tidak"
-    while verif.lower() == "tidak":
-        verif = input("\nApakah anda ingin langsung melanjutkan ke quiz? (ya/tidak): ")
-        if verif.lower() == "ya":
-            os.system('cls')
-            quiz(cracked_subjects)
-        else: 
-            print("\nSilahkan baca-baca dahulu (scroll keatas)")
+    quiz(cracked_subjects, name, class_code)
 
 # Fungsi Kuis dengan pertanyaan berdasarkan isi telur yang dipecahkan
-def quiz(cracked_subjects):
+def quiz(cracked_subjects, name, class_code):
     quiz_data = load_data(QUIZ_FILE)
     score = 0
 
@@ -90,5 +106,26 @@ def quiz(cracked_subjects):
                 print(f"Jawaban salah. Jawaban yang benar adalah: {question_data['answer']}")
         else:
             print("Kamu memasukkan jawaban yang tidak ada di pilihan, kamu tidak mendapatkan skor.")
+    score_updated = score/len(cracked_subjects)*100
+    score_bulat = round(score_updated, 1)
+    print(f"\nSkor kamu: {score_bulat}/100")
 
-    print(f"\nSkor kamu: {score}/{len(cracked_subjects)}")
+    # Menyimpan skor ke dalam kelas.json
+    data_kelas = load_data(KELAS_FILE)
+    for kelas in data_kelas["classes"]:
+        if kelas["class_code"] == class_code:
+            if "students_scores" not in kelas:
+                kelas["students_scores"] = {}
+            kelas["students_scores"][name] = score_bulat
+            break
+
+    save_data(data_kelas, KELAS_FILE)
+    print(f"Skor {name} telah disimpan di kelas dengan kode {class_code}.")
+    
+    kembali = input("Ke menu awal? (ya/tidak): ")
+    if kembali.lower() == "tidak":
+        print("Terimakasih Telah Memainkan Plants & Animals!\n")
+        return False
+    else: 
+        print(" ")
+        return True
