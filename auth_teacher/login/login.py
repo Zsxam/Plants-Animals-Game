@@ -11,12 +11,11 @@ def load_data(filename):
         return {}
 
 def login_teacher():
-
+    os.system('cls')
     data_guru = load_data(TEACHER_FILE)
     if len(data_guru) == 0:
-        print("Data guru tidak tersedia.")
+        print("Data guru tidak tersedia, Register terlebih dahulu")
         return
-    os.system('cls')
     print("Silahkan Login")
     kesempatan = 5
 
@@ -27,16 +26,11 @@ def login_teacher():
         for guru in data_guru:
             if guru["email"] == email and guru["password"] == password:
                 os.system('cls')
-                nama = next((guru['name'] for guru in data_guru if guru['email'] == email), None)
-                print(f"Selamat datang, {nama}!")
-                return email, nama
-            elif guru["email"] == email:
-                print(f"\nPassword salah, kesempatan tersisa: {kesempatan-1}")
-            elif guru["password"] == password:
-                print(f"\nEmail salah, kesempatan tersisa: {kesempatan-1}")
+                return email
             else:
-                print(f"\nEmail dan password salah, kesempatan tersisa: {kesempatan-1}")
+                print(f"\nEmail atau password salah, kesempatan tersisa: {kesempatan-1}")
 
         kesempatan -= 1
 
-    print("Anda telah keluar dari sistem login")
+    print("Anda telah keluar dari sistem login\n")
+    return
