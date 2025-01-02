@@ -35,7 +35,9 @@
             "class_code": "a3b0c9",
             "students_scores": {
                 "Azka": 33.3,
-                "Fadhlan": 33.3
+                "Fadhlan": 33.3,
+                "Ramadhan": 100,
+                "Naufal": 25.0
             }
         },
         {
@@ -47,8 +49,8 @@
         },
         {
             "teacher": "zsxam@gmail.com",
-            "class_name": "v",
-            "subject": "animals",
+            "class_name": "V-Bucks",
+            "subject": "Animals",
             "class_code": "73fc79",
             "students_scores": {}
         },
@@ -57,6 +59,62 @@
             "class_name": "Kelas Azka",
             "subject": "Animals",
             "class_code": "c98b52",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "Jimat",
+            "subject": "Plants",
+            "class_code": "fb7124",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "Ahay",
+            "subject": "Animals",
+            "class_code": "ecb162",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "Tes",
+            "subject": "Animals",
+            "class_code": "81f2c5",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "g",
+            "subject": "Animals",
+            "class_code": "68ca8f",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "j",
+            "subject": "Animals",
+            "class_code": "002513",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "k",
+            "subject": "Animals",
+            "class_code": "5e88c9",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "m",
+            "subject": "Animals",
+            "class_code": "5e2d3e",
+            "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "fadlan",
+            "subject": "Plants",
+            "class_code": "9d31b7",
             "students_scores": {}
         }
     ]

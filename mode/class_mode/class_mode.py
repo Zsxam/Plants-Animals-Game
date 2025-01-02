@@ -3,7 +3,7 @@ import os
 import game_core.game_kelas as game_kelas
 import index
 
-KELAS_FILE = "mode\class_mode\kelas.json"
+KELAS_FILE = "mode/class_mode/kelas.json"
 
 def load_data(filename):
     with open(filename, "r") as f:
@@ -33,7 +33,11 @@ def class_mode():
         print(f"Subjek kelas ini adalah: {subject}\n")
 
         # Siswa langsung memecahkan telur berdasarkan subjek kelas
-        game_kelas.crack_eggs(subject, name, class_code)
+        cracked_subjects = game_kelas.crack_eggs(subject, name, class_code)
+        if cracked_subjects:
+            game_kelas.quiz(cracked_subjects, name, class_code)
+        else:
+            print("Tidak ada subjek yang dapat dipelajari. Kembali ke menu utama.\n")
     else:
-        print("Kode kelas tidak ditemukan!")
+        print("Kode kelas tidak ditemukan!\n")
 

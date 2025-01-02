@@ -3,9 +3,9 @@ import json
 import random
 
 # File yang berisi informasi hewan dan tumbuhan
-SUBJECTS_FILE = "game_core\subjects.json"
+SUBJECTS_FILE = "game_core/subjects.json"
 # File yang berisi pertanyaan kuis
-QUIZ_FILE = "game_core\quiz_questions.json"
+QUIZ_FILE = "game_core/quiz_questions.json"
 # File yang berisi kelas
 KELAS_FILE = "mode/class_mode/kelas.json"
 
@@ -58,25 +58,32 @@ def crack_eggs(subject_type, name, class_code):
 
             # Cek jumlah telur yang telah dipecahkan
             if len(selected_eggs) == 3:
-                verif = input("\nAnda sudah memecahkan 3 cracks, apakah anda ingin melanjutkan ke quiz? (ya untuk lanjut ke quiz): ")
-                if verif.lower() == "ya":
-                    break
-                else:
-                    print("Anda bisa memecahkan 2 kali lagi.")
+                while True:
+                    verif = input("\nAnda sudah memecahkan 3 cracks, apakah anda ingin melanjutkan ke quiz? (ya/tidak): ")
+                    if verif.lower() == "ya":
+                        return cracked_subjects
+                    elif verif.lower() == "tidak":
+                        print("Anda bisa memecahkan 2 kali lagi.")
+                        break
+                    else:
+                        print("Pilihan tidak valid, silakan memasukkan 'ya' atau 'tidak'")
+                        
             elif len(selected_eggs) == 4:
-                verif = input("\nAnda sudah memecahkan 4 cracks, apakah anda ingin melanjutkan ke quiz? (ya untuk lanjut ke quiz): ")
-                if verif.lower() == "ya":
-                    break
-                else:
-                    print("Anda bisa memecahkan 1 kali lagi.")
+                while True:
+                    verif = input("\nAnda sudah memecahkan 4 cracks, apakah anda ingin melanjutkan ke quiz? (ya/tidak): ")
+                    if verif.lower() == "ya":
+                        return cracked_subjects
+                    elif verif.lower() == "tidak":
+                        print("Anda bisa memecahkan 1 kali lagi.")
+                        break
+                    else:
+                        print("Pilihan tidak valid, silakan memasukkan 'ya' atau 'tidak'")
             elif len(selected_eggs) == 5:
                 print("Anda telah memecahkan 5 telur. Melanjutkan ke kuis.")
-                break
+                return cracked_subjects
 
         except ValueError:
             print("Masukkan nomor yang valid!")
-
-    quiz(cracked_subjects, name, class_code)
 
 # Fungsi Kuis dengan pertanyaan berdasarkan isi telur yang dipecahkan
 def quiz(cracked_subjects, name, class_code):
@@ -96,16 +103,21 @@ def quiz(cracked_subjects, name, class_code):
         
         for i, option in enumerate(question_data["options"], 1):
             print(f"{i}. {option}")
-        
-        answer = int(input("Pilih jawaban yang benar (masukkan nomor): "))
-        if 0 < answer <= 3:
-            if question_data["options"][int(answer) - 1] == question_data["answer"]:
-                print("Jawaban kamu benar!")
-                score += 1
-            else:
-                print(f"Jawaban salah. Jawaban yang benar adalah: {question_data['answer']}")
-        else:
-            print("Kamu memasukkan jawaban yang tidak ada di pilihan, kamu tidak mendapatkan skor.")
+        while True:
+            try:
+                answer = int(input("Pilih jawaban yang benar (masukkan nomor 1-3): "))
+                if 0 < answer <= 3:
+                    if question_data["options"][int(answer) - 1] == question_data["answer"]:
+                        print("Jawaban kamu benar!")
+                        score += 1
+                    else:
+                        print(f"Jawaban salah. Jawaban yang benar adalah: {question_data['answer']}")
+                    break
+                else:
+                    print("Kamu memasukkan jawaban yang tidak ada di pilihan. Silahkan coba lagi.")
+            except ValueError:
+                print("Masukkan nomor yang valid!")
+
     score_updated = score/len(cracked_subjects)*100
     score_bulat = round(score_updated, 1)
     print(f"\nSkor kamu: {score_bulat}/100")
@@ -121,11 +133,14 @@ def quiz(cracked_subjects, name, class_code):
 
     save_data(data_kelas, KELAS_FILE)
     print(f"Skor {name} telah disimpan di kelas dengan kode {class_code}.")
-    
-    kembali = input("Ke menu awal? (ya/tidak): ")
-    if kembali.lower() == "tidak":
-        print("Terimakasih Telah Memainkan Plants & Animals!\n")
-        return False
-    else: 
-        print(" ")
-        return True
+    print("Kuis telah selesai!\n")
+    while True:
+        kembali = input("Ke menu awal? (ya/tidak): ")
+        if kembali.lower() == "tidak":
+            print("Terimakasih Sudah Memainkan Game Plants & Animals! 😊\n")
+            quit()
+        elif kembali.lower() == "ya":
+            return True
+        else: 
+            print("Masukkan 'ya' atau 'tidak' untuk memilih jawaban yang benar.\n")
+        

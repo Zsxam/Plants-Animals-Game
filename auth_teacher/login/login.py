@@ -1,7 +1,7 @@
 import os
 import json
 # File yang berisi data guru
-TEACHER_FILE = "auth_teacher\data_guru.json"
+TEACHER_FILE = "auth_teacher/data_guru.json"
 
 def load_data(filename):
     try:

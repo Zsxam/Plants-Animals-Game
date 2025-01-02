@@ -5,7 +5,6 @@ def teacher_logout():
     while True:
         pilih = input("Apakah anda ingin logout? (ya/tidak): ").strip().lower()
         if pilih == "ya":
-            teacher_profile = False
             print("Logout berhasil!\n")
             return True
         elif pilih == "tidak":
