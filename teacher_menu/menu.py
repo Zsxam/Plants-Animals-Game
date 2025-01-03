@@ -139,18 +139,23 @@ def show_classes(teacher_profile):
 
     # Periksa apakah ada kelas dalam data
     if not data_kelas.get("classes"):
-        print("Belum ada kelas yang terdaftar.")
-        return
-    else:
-        print("Kelas yang terdaftar:")
+        print("\nBelum ada kelas yang terdaftar.\n")
+        return False
+    
+    cek_kelas = [kelas for kelas in data_kelas.get("classes", []) if kelas.get("teacher") == teacher_profile]
 
+    if not cek_kelas:
+        print("\nAnda belum memiliki kelas.\n")
+        return False
+
+    print("Kelas yang terdaftar:")
     # Iterasi melalui setiap kelas dalam data_kelas["classes"]
     for kelas in data_kelas.get("classes", []):
         # Cocokkan teacher_profile dengan "teacher" di setiap kelas
         if kelas.get("teacher") == teacher_profile:
             print(f"- Nama Kelas: {kelas['class_name']}, Subjek: {kelas['subject']}, Kode: {kelas['class_code']}")
     print("")
-    return
+    return True
     
 def lihat_skor(teacher_profile):
     data_kelas = load_data(KELAS_FILE)
@@ -174,7 +179,7 @@ def lihat_skor(teacher_profile):
                             print(f"{rank}. {student}: {score}")
                         print("")
                     else:
-                        print("Belum ada skor siswa yang terdaftar.")
+                        print("Belum ada skor siswa yang terdaftar.\n")
                     return
 
             print("Kelas tidak ditemukan atau Anda tidak memiliki akses untuk melihat skor siswa di kelas ini.")
@@ -202,16 +207,19 @@ def teacher_menu(teacher_profile):
             os.system('cls')
             create_class(teacher_profile)
         elif choice == "2":
-            show_classes(teacher_profile)
-            code = input("Masukkan kode kelas yang ingin diubah: ")
-            edit_class(teacher_profile, code)
+            lihat = show_classes(teacher_profile)
+            if lihat:
+                code = input("Masukkan kode kelas yang ingin diubah: ")
+                edit_class(teacher_profile, code)
         elif choice == "3":
-            show_classes(teacher_profile)
-            code = input("Masukkan kode kelas yang ingin dihapus: ")
-            delete_class(teacher_profile, code)
+            lihat = show_classes(teacher_profile)
+            if lihat:
+                code = input("Masukkan kode kelas yang ingin dihapus: ")
+                delete_class(teacher_profile, code)
         elif choice == "4":
-            show_classes(teacher_profile)
-            lihat_skor(teacher_profile)
+            lihat = show_classes(teacher_profile)
+            if lihat:
+                lihat_skor(teacher_profile)
         elif choice == "5":
             os.system('cls')
             logout = lo.teacher_logout()
