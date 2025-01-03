@@ -5,14 +5,22 @@ TEACHER_FILE = "auth_teacher/data_guru.json"
 
 #Memuat data dari file dataguru.json
 def load_data():
-    with open(TEACHER_FILE, "r") as f:
-        return json.load(f)
+    try:
+        with open(TEACHER_FILE, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"File {TEACHER_FILE} tidak ditemukan.")
+        return None
 #try dan except digunakan supaya program tetap berjalan meskipun ada masalah seperti database belum dibuat atau rusak
 
 #Menyimpan data ke file json
 def save_database(data):
-    with open(TEACHER_FILE, "w") as file: #Membuka file dataguru.json untuk write mode
-        json.dump(data, file, indent=4) #Untuk menulis data ke file dalam format json
+    try:
+        with open(TEACHER_FILE, "w") as file: #Membuka file dataguru.json untuk write mode
+            json.dump(data, file, indent=4) #Untuk menulis data ke file dalam format json
+    except FileNotFoundError:
+        print(f"File {TEACHER_FILE} tidak ditemukan.")
+        return None
 
 def is_valid_name(name):
     # Periksa setiap karakter dalam nama

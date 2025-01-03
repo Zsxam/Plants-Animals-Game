@@ -11,13 +11,20 @@ KELAS_FILE = "mode/class_mode/kelas.json"
 
 # Load data dari file JSON
 def load_data(filename):
-    
-    with open(filename, "r") as f:
-        return json.load(f)
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan")
+        return None
 
 def save_data(data, filename):
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=4)
+    try:
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=4)
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan")
+        return None
 
 # Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
 def crack_eggs(subject_type, name, class_code):

@@ -6,12 +6,20 @@ import index
 KELAS_FILE = "mode/class_mode/kelas.json"
 
 def load_data(filename):
-    with open(filename, "r") as f:
-        return json.load(f)
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan")
+        return None
 
 def save_data(data, filename):
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=4)
+    try:
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=4)
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan")
+        return None
         
 def class_mode():
     data = load_data(KELAS_FILE)

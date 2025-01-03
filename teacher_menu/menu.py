@@ -8,13 +8,20 @@ KELAS_FILE = "mode/class_mode/kelas.json"
 TEACHER_FILE = "auth_teacher/data_guru.json"
 
 def load_data(filename):
-    
-    with open(filename, "r") as f:
-        return json.load(f)
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan")
+        return None
 
 def save_data(data, filename):
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=4)
+    try:
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=4)
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan")
+        return None
 
 # Fungsi untuk membuat kelas
 def create_class(teacher_profile):

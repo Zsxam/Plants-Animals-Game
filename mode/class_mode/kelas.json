@@ -123,6 +123,13 @@
             "subject": "Animals",
             "class_code": "38d263",
             "students_scores": {}
+        },
+        {
+            "teacher": "zsxam@gmail.com",
+            "class_name": "Test2",
+            "subject": "Animals",
+            "class_code": "19ab8f",
+            "students_scores": {}
         }
     ]
 }

@@ -8,7 +8,8 @@ def load_data(filename):
         with open(filename, "r") as f:
             return json.load(f)
     except FileNotFoundError:
-        return {}
+        print(f"File {filename} tidak ditemukan.")
+        return None
 
 def login_teacher():
     os.system('cls')

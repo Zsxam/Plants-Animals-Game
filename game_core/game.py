@@ -10,9 +10,12 @@ QUIZ_FILE = "game_core/quiz_questions.json"
 
 # Load data dari file JSON
 def load_data(filename):
-    
-    with open(filename, "r") as f:
-        return json.load(f)
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan")
+        return None
 
 # Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
 def crack_eggs(subject_type):
