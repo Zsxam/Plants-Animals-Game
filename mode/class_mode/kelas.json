@@ -12,7 +12,10 @@
             "class_name": "Plants 1",
             "subject": "Plants",
             "class_code": "47afa4",
-            "students_scores": {}
+            "students_scores": {
+                "KAKA": 80.0,
+                "KAKI": 100.0
+            }
         },
         {
             "teacher": "azka@gmail.com",

@@ -58,13 +58,13 @@ def crack_eggs(subject_type, name, class_code):
 
             # Cek jumlah telur yang telah dipecahkan
             if len(selected_eggs) == 3:
-                verif = input("\nAnda sudah memecahkan 3 cracks, apakah anda ingin melanjutkan ke quiz? (ya/tidak): ")
+                verif = input("\nAnda sudah memecahkan 3 cracks, apakah anda ingin melanjutkan ke quiz? (ya untuk ke quiz): ")
                 if verif.lower() == "ya":
                     break
                 else:
                     print("Anda bisa memecahkan 2 kali lagi.")
             elif len(selected_eggs) == 4:
-                verif = input("\nAnda sudah memecahkan 4 cracks, apakah anda ingin melanjutkan ke quiz? (ya/tidak): ")
+                verif = input("\nAnda sudah memecahkan 4 cracks, apakah anda ingin melanjutkan ke quiz? (ya untuk ke quiz): ")
                 if verif.lower() == "ya":
                     break
                 else:
@@ -125,7 +125,7 @@ def quiz(cracked_subjects, name, class_code):
     kembali = input("Ke menu awal? (ya/tidak): ")
     if kembali.lower() == "tidak":
         print("Terimakasih Telah Memainkan Plants & Animals!\n")
-        return False
+        quit()
     else: 
         print(" ")
         return True
