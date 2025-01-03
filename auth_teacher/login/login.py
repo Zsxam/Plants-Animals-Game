@@ -1,5 +1,6 @@
 import os
 import json
+
 # File yang berisi data guru
 TEACHER_FILE = "auth_teacher/data_guru.json"
 
@@ -14,6 +15,8 @@ def load_data(filename):
 def login_teacher():
     os.system('cls')
     data_guru = load_data(TEACHER_FILE)
+
+    # Cek apakah data guru ada
     if len(data_guru) == 0:
         print("Data guru tidak tersedia, Register terlebih dahulu")
         return

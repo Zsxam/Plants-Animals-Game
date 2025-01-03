@@ -3,7 +3,6 @@ import index
 
 TEACHER_FILE = "auth_teacher/data_guru.json"
 
-#Memuat data dari file dataguru.json
 def load_data():
     try:
         with open(TEACHER_FILE, "r") as f:
@@ -11,9 +10,7 @@ def load_data():
     except FileNotFoundError:
         print(f"File {TEACHER_FILE} tidak ditemukan.")
         return None
-#try dan except digunakan supaya program tetap berjalan meskipun ada masalah seperti database belum dibuat atau rusak
 
-#Menyimpan data ke file json
 def save_database(data):
     try:
         with open(TEACHER_FILE, "w") as file: #Membuka file dataguru.json untuk write mode
@@ -54,7 +51,6 @@ def is_valid_email(email):
     
     return True
 
-#Input untuk registrasi akun pengguna baru
 def register_teacher():
     print("Registrasi")
     # Validasi nama
@@ -91,6 +87,7 @@ def register_teacher():
         "password": password 
     }
 
+    # Menyimpan data guru baru
     guru.append(new_guru)
     save_database(guru)
     print("Registrasi berhasil!\n")

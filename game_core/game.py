@@ -17,7 +17,7 @@ def load_data(filename):
         print(f"File {filename} tidak ditemukan")
         return None
 
-# Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
+# Fungsi untuk siswa memilih telur di Mode Mandiri
 def crack_eggs(subject_type):
     subjects_data = load_data(SUBJECTS_FILE)
     
@@ -83,15 +83,6 @@ def crack_eggs(subject_type):
         except ValueError:
             print("Masukkan nomor yang valid!")
 
-    # Setelah memecahkan telur, siswa bisa mengikuti kuis
-    # verif = "tidak"
-    # while verif.lower() != "ya":
-    #     verif = input("\nApakah anda ingin langsung melanjutkan ke quiz? (ya/tidak): ")
-    #     if verif.lower() == "ya":
-    #         os.system('cls')
-    #     else: 
-    #         print("\nSilahkan baca-baca dahulu (scroll keatas)")
-
 # Fungsi Kuis dengan pertanyaan berdasarkan isi telur yang dipecahkan
 def quiz(cracked_subjects):
     quiz_data = load_data(QUIZ_FILE)
@@ -128,6 +119,7 @@ def quiz(cracked_subjects):
     score_updated = int(score/len(cracked_subjects)*100)
     print(f"\nSkor kamu: {score_updated}/100")
     print("Kuis telah selesai!\n")
+    # Konfirmasi kembali ke menu awal
     while True:
         kembali = input("Ke menu awal? (ya/tidak): ")
         if kembali.lower() == "tidak":

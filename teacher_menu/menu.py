@@ -4,7 +4,9 @@ import os
 import auth_teacher.logout.logout as lo
 import index
 
+# File yang berisi kelas
 KELAS_FILE = "mode/class_mode/kelas.json"
+# File yang berisi data guru
 TEACHER_FILE = "auth_teacher/data_guru.json"
 
 def load_data(filename):
@@ -23,7 +25,6 @@ def save_data(data, filename):
         print(f"File {filename} tidak ditemukan")
         return None
 
-# Fungsi untuk membuat kelas
 def create_class(teacher_profile):
     # Muat data guru
     data_guru = load_data(TEACHER_FILE)
@@ -39,7 +40,6 @@ def create_class(teacher_profile):
         print(f"Guru dengan email '{teacher_profile}' tidak ditemukan.")
         index.main()
 
-    # Lanjutkan pembuatan kelas
     data_kelas = load_data(KELAS_FILE)
 
     if "classes" not in data_kelas:
@@ -66,7 +66,6 @@ def create_class(teacher_profile):
     save_data(data_kelas, KELAS_FILE)
     print(f"Kelas '{class_name}' berhasil dibuat dengan kode: {class_code} !")
 
-    # Kembali ke menu guru setelah menambah kelas
     print(" ")
     return 
 
@@ -94,7 +93,6 @@ def edit_class(teacher_profile, class_code):
             while True:
                 valid = input("\nApakah anda yakin dengan perubahan ini? (ya/tidak): ")
                 if valid.lower() == "ya":
-                    # Update data kelas
                     kelas["class_name"] = new_class_name
                     kelas["subject"] = new_subject
                     save_data(data_kelas, KELAS_FILE)
@@ -105,7 +103,7 @@ def edit_class(teacher_profile, class_code):
                     break
                 else:
                     print("Masukkan jawaban yang valid.")
-            return  # Kembali setelah mengedit kelas
+            return  
 
     if not kelas_found:
         print("Kelas tidak ditemukan atau Anda tidak memiliki akses untuk mengedit kelas ini.\n")
@@ -131,7 +129,6 @@ def delete_class(teacher_profile, class_code):
                 break
             else:
                 print("Masukkan jawaban yang valid.")
-    # Kembali ke menu guru setelah menghapus kelas
     return
 
 def show_classes(teacher_profile):
@@ -143,13 +140,12 @@ def show_classes(teacher_profile):
         return False
     
     cek_kelas = [kelas for kelas in data_kelas.get("classes", []) if kelas.get("teacher") == teacher_profile]
-
+    # Periksa apakah user memiliki kelas
     if not cek_kelas:
         print("\nAnda belum memiliki kelas.\n")
         return False
 
     print("Kelas yang terdaftar:")
-    # Iterasi melalui setiap kelas dalam data_kelas["classes"]
     for kelas in data_kelas.get("classes", []):
         # Cocokkan teacher_profile dengan "teacher" di setiap kelas
         if kelas.get("teacher") == teacher_profile:
@@ -167,14 +163,12 @@ def lihat_skor(teacher_profile):
         lihat_skor = input("Pilih menu (1-2): ")
         if lihat_skor == "1":
             class_code = input("\nMasukkan kode kelas untuk melihat skor siswa: ")
-            # Cari kelas berdasarkan kode
             for kelas in data_kelas.get("classes", []):
                 if kelas.get("class_code") == class_code and kelas.get("teacher") == teacher_profile:
                     print(f"\nSkor Siswa di Kelas '{kelas['class_name']}':")
                     if kelas.get("students_scores"):
                         # Ambil data skor siswa dan urutkan dari yang terbesar ke terkecil
                         sorted_scores = sorted(kelas["students_scores"].items(), key=lambda x: x[1], reverse=True)
-                        # Tampilkan skor yang sudah diurutkan
                         for rank, (student, score) in enumerate(sorted_scores, start=1):
                             print(f"{rank}. {student}: {score}")
                         print("")

@@ -9,7 +9,6 @@ QUIZ_FILE = "game_core/quiz_questions.json"
 # File yang berisi kelas
 KELAS_FILE = "mode/class_mode/kelas.json"
 
-# Load data dari file JSON
 def load_data(filename):
     try:
         with open(filename, "r") as f:
@@ -26,7 +25,7 @@ def save_data(data, filename):
         print(f"File {filename} tidak ditemukan")
         return None
 
-# Fungsi untuk siswa memilih telur di Mode Mandiri atau Mode Kelas
+# Fungsi untuk siswa memilih telur di Mode Kelas
 def crack_eggs(subject_type, name, class_code):
     subjects_data = load_data(SUBJECTS_FILE)
     
