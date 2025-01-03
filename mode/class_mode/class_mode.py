@@ -28,7 +28,12 @@ def class_mode():
     # Jika kelas ditemukan
     if found_class:
         print(f"Selamat datang di kelas: {found_class['class_name']}")
-        name = input("Masukkan Nama: ")
+        while True:
+            name = input("Masukkan Nama: ")
+            if name.replace(" ","").isalpha():  # Periksa apakah input hanya berisi huruf
+                break
+            else:
+                print("Nama hanya boleh berisi huruf. Silakan coba lagi.")
         subject = found_class["subject"]
         print(f"Subjek kelas ini adalah: {subject}\n")
 

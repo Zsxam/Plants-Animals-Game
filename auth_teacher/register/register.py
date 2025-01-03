@@ -54,7 +54,7 @@ def register_teacher():
         nama = input("Masukkan nama: ").strip()
         if nama and is_valid_name(nama):
             break
-        print("Nama tidak boleh kosong. Silakan coba lagi.\n")
+        print("Nama tidak valid. Silakan coba lagi.\n")
     
     guru = load_data() #Variabel guru berisi data dari file dataguru.json
     existing_emails = [guru["email"] for guru in guru]

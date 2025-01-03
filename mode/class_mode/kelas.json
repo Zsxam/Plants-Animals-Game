@@ -116,6 +116,13 @@
             "subject": "Plants",
             "class_code": "9d31b7",
             "students_scores": {}
+        },
+        {
+            "teacher": "fadhil@gmail.com",
+            "class_name": "Fadhil",
+            "subject": "Animals",
+            "class_code": "38d263",
+            "students_scores": {}
         }
     ]
 }

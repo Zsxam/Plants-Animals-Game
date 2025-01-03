@@ -18,5 +18,10 @@
         "name": "Fadhlan",
         "email": "azkafr@gmail.com",
         "password": "123"
+    },
+    {
+        "name": "Fadhil",
+        "email": "fadhil@gmail.com",
+        "password": "123"
     }
 ]
